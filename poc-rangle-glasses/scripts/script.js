@@ -32,7 +32,7 @@ triangleAnim.currentFrame = currentFrame;
 Time.ms.interval(interval).subscribe(
         function (elapsedTime) {
                 // NOTE: Time.ms may differ slightly from the elapsed
-                // time passed to the callback. Time.ms shows the exact
+                // time passed to the citallback. Time.ms shows the exact
                 // time since the effect started, whereas the callback
                 // exposes an exact multiple of the specified interval.
                 //currentFrame = ((elapsedTime / 1000) % totalFrames) + startFrame;
@@ -44,9 +44,9 @@ Time.ms.interval(interval).subscribe(
                                 currentFrame++;
                         }
                 }
-                Diagnostics.log('elapsedTime: ' + elapsedTime);
-                Diagnostics.log('currentFrame: ' + currentFrame);
-                Diagnostics.log('--------------');
+                // Diagnostics.log('elapsedTime: ' + elapsedTime);
+                // Diagnostics.log('currentFrame: ' + currentFrame);
+                // Diagnostics.log('--------------');
         });
 
 
@@ -55,12 +55,12 @@ FaceGestures.isSmiling(face).monitor().subscribe(function (changedValue) {
                 isSmiling = true;
                 triangleAnim.currentFrame = smileFrame;
                 // emmitter.birthrate = 15;
-                Diagnostics.log('isSmiling: true');
+                // Diagnostics.log('isSmiling: true');
         } else {
                 isSmiling = false;
                 triangleAnim.currentFrame = currentFrame;
                 // emmitter.birthrate = 0;
-                Diagnostics.log('isSmiling: false');
+                // Diagnostics.log('isSmiling: false');
         }
 });
 
